@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class ProductBasket:IEntity
+    public class Product:IEntity
     {
-        public int ProductBasketId { get; set; }
-        public int BasketId { get; set; }
-        public float Price { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
         public string Description { get; set; }
+        public ICollection< Order> Orders { get; set; }
     }
 }

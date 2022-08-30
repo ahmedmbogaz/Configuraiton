@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
-
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
@@ -19,14 +18,13 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ProductBasketManager>().As<IProductBasketService>();
-            builder.RegisterType<EfProductBasketDal>().As<IProductBasketDal>();
 
-            builder.RegisterType<BasketManager>().As<IBasketService>();
-            builder.RegisterType<EfBasketDal>().As<IBasketDal>();
+            builder.RegisterType<OrderManager>().As<IOrderService>();
+            builder.RegisterType<EfOrderDal>().As<IOrderDal>();
 
-            builder.RegisterType<CustomerManager>().As<ICustomerService>();
-            builder.RegisterType<EfCustomerDal>().As<ICustomerDal>();
+            builder.RegisterType<ProductManager>().As<IProductService>();
+            builder.RegisterType<EfProductDal>().As<IProductDal>();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

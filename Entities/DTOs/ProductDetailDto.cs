@@ -1,16 +1,17 @@
-﻿using Core.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class Customer:IEntity
+    public class ProductDetailDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public DateTime OrderCreatedDate { get; set; }
+        public string CustomerName { get; set; }
+
     }
 }
